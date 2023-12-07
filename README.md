@@ -58,7 +58,7 @@ http://localhost/integrador/index.php
 
 para el listado de oradores
 htpp://localhost/integrador/administracion.php
-> Tener en consideracion  q esta es mi ruta relativa. Si el proyecto esta en una subcargapeta en el directorio htdocs agregarlos a la ruta 
+> Tener en consideracion  q esta es mi ruta relativa. Si el proyecto esta en una subcarpeta en el directorio htdocs agregarlos a la ruta 
 
 
 
