@@ -1,0 +1,6 @@
+.carousel-inner img{
+    filter:brightness(0.4);
+}  
+footer{
+    background-color: rgb(35, 35, 62);
+}
