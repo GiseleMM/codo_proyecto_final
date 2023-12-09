@@ -39,6 +39,42 @@ class Orador
             return $alta;
         }
     }
+    public function modificacion(): bool
+    {
+        $modificacion = false;
+
+        $conexion = mysqli_connect("localhost", "root", "", "integrador_cac");
+        if (!mysqli_connect_errno()) {
+$query="UPDATE `oradores` SET `nombre`='{$this->nombre}',`apellido`='{$this->apellido}',`mail`='{$this->mail}',`tema`='{$this->tema}',`fecha_alta`='{$this->fecha_alta}' WHERE `id_orador`='{$this->id_orador}'";
+      
+
+            $consulta = mysqli_query($conexion, $query);
+            if ($consulta !== false) {
+                $modificacion = true;
+            }
+            mysqli_close($conexion);
+
+            return $modificacion;
+        }
+    }
+    public static  function eliminar($id): bool
+    {
+        $eliminacion = false;
+
+        $conexion = mysqli_connect("localhost", "root", "", "integrador_cac");
+        if (!mysqli_connect_errno()) {
+
+            $query = "DELETE FROM  `oradores` WHERE  `id_orador`='{$id}'";
+
+            $consulta = mysqli_query($conexion, $query);
+            if ($consulta !== false) {
+                $eliminacion = true;
+            }
+            mysqli_close($conexion);
+
+            return $eliminacion;
+        }
+    }
     public static function listarTodos(): array |null
     {
         $oradores = null;
@@ -60,6 +96,8 @@ class Orador
                         $orador->id_orador = $obj->id_orador;
                         $orador->nombre = $obj->nombre;
                         $orador->apellido = $obj->apellido;
+                        $orador->mail = $obj->mail;
+
                         $orador->tema = $obj->tema;
                         $orador->fecha_alta = (string)$obj->fecha_alta;
 
